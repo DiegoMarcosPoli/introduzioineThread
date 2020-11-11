@@ -21,10 +21,11 @@ namespace IntroduzioneThread
 
             //avvio Thread
             t1.Start();//il metodo start equivale alla Fork
+            t1.Join();//il joint richiede che il processo t1 finisca prima dell'inizio degli altri
             t2.Start();
 
-            // uccisione di un thread (attenzione all'utilizzo)
-            t1.Abort();
+           
+           
             for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Main {0}", i);
