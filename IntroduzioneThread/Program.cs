@@ -23,7 +23,9 @@ namespace IntroduzioneThread
             t1.Start();//il metodo start equivale alla Fork
             t2.Start();
 
-            for (int i = 0; i < 10000; i++)
+            // uccisione di un thread (attenzione all'utilizzo)
+            t1.Abort();
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Main {0}", i);
             }
@@ -35,14 +37,14 @@ namespace IntroduzioneThread
     {
         public void Thread1()
         {
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Thread1 {0}", i);
             }
         }
         public  void Thread2()
         {
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 100; i++)
             {
                 Console.WriteLine("Thread2 {0}", i);
             }
